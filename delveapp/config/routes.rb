@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'sessions/welcome', to: 'sessions#welcome', as: 'welcome'
+
+  get 'sessions/new'
+
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
   get 'artists/new'
 
   get 'artists/index'
@@ -31,7 +39,7 @@ Rails.application.routes.draw do
 
   get 'galleries/show'
 
-  get 'museums/index'
+  get 'museums/index', to: 'museums#index', as: 'museums'
 
   get 'museums/show'
 
