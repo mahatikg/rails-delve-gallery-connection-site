@@ -1,5 +1,7 @@
 class MuseumsController < ApplicationController
 
+  #before_action :set_museum, only: [:show]
+
   def index
     @museums = Museum.all
   end

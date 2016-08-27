@@ -2,5 +2,6 @@
 
 <% @galleries.each do |gallery| %>
 
-<p><%= gallery.name %>, <%= gallery.gallery_category %></p>
+<p><strong><%= gallery.name %>,   <%= gallery.gallery_category %></strong>
+<em><%= link_to "Explore art at #{gallery.name}", gallery_path(gallery) %></em></p>
 <% end %>

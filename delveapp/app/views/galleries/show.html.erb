@@ -1,2 +1,9 @@
-<h1>Galleries#show</h1>
-<p>Find me in app/views/galleries/show.html.erb</p>
+<h1><%= "Paintings at #{@gallery.name}" %></h1>
+
+<% @paintings.each do |painting| %>
+
+  <% if painting.gallery_id == @gallery.id %>
+
+    <p><%= painting.title %></p>
+  <% end %>
+<% end %>

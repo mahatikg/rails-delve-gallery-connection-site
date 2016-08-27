@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20160826235905) do
   create_table "paintings", force: :cascade do |t|
     t.string   "title"
     t.integer  "artist_id"
+    t.integer  "gallery_id"
     t.string   "date"
     t.string   "movement"
     t.datetime "created_at", null: false

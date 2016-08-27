@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   #
   # get 'paintings/new'
   #
-  # get 'paintings/index'
+  #get '/paintings', to: 'paintings#index', as: 'paintings'
   #
   # get 'paintings/show'
   #
@@ -37,7 +37,7 @@ Rails.application.routes.draw do
   #
   get '/galleries', to: 'galleries#index', as: 'galleries'
   #
-  # get 'galleries/show'
+  get 'galleries/:id', to: 'galleries#show', as: 'gallery'
 
   get '/museums', to: 'museums#index', as: 'museums'
 
