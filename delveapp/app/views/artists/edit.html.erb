@@ -1,2 +1,5 @@
-<h1>Artists#edit</h1>
-<p>Find me in app/views/artists/edit.html.erb</p>
+<h1>Edit Artist</h1>
+<%= form_tag edit_artist_path do %>
+  <%= render 'form' %>
+  <%= submit_tag "Edit Artist" %>
+<% end %>

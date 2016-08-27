@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'sessions/welcome', to: 'sessions#welcome', as: 'welcome'
+  get '/welcome', to: 'sessions#welcome', as: 'welcome'
 
   # get 'sessions/new'
   #
@@ -7,29 +7,32 @@ Rails.application.routes.draw do
   #
   # get 'sessions/destroy'
   #
-  # get 'artists/new'
+  get 'artists/new', to: 'artists#new', as: 'new_artist'
   #
   # get 'artists/index'
   #
   get '/artists/:id', to: 'artists#show', as: 'artist'
   #
-  # get 'artists/create'
+  post 'artists/create', to: 'artist#create'
   #
-  # get 'artists/edit'
+  get 'artists/:id/edit', to: 'artists#edit', as: 'edit_artist'
+  post 'artists/:id/edit', to: 'artists#edit'
   #
-  # get 'artists/update'
+  patch 'artists/update', to: 'artist#update'
   #
   # get 'artists/delete'
   #
-  # get 'paintings/new'
+  get '/paintings/new', to: 'paintings#new', as: 'new_painting'
+  post '/paintings', to: 'paintings#create'
   #
-  #get '/paintings', to: 'paintings#index', as: 'paintings'
+  get '/paintings', to: 'paintings#index'
   #
   get '/paintings/:id', to: 'paintings#show', as: 'painting'
   #
   # get 'paintings/create'
   #
-  # get 'paintings/edit'
+  get '/paintings/:id/edit', to: 'paintings#edit', as: 'edit_painting'
+  patch '/paintings/:id', to: 'paintings#update'
   #
   # get 'paintings/update'
   #

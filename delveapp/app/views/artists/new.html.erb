@@ -1,2 +1,6 @@
-<h1>Artists#new</h1>
-<p>Find me in app/views/artists/new.html.erb</p>
+<h1>Add Artist</h1>
+
+<%= form_tag new_artist_path do %>
+  <%= render 'form' %>
+  <%= submit_tag "Add Artist" %>
+<% end %>

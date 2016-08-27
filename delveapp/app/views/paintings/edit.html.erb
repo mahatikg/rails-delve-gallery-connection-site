@@ -1,2 +1,5 @@
-<h1>Paintings#edit</h1>
-<p>Find me in app/views/paintings/edit.html.erb</p>
+<h1>Edit Painting</h1>
+<%= form_tag painting_path(@painting) do %>
+  <%= render 'form' %>
+  <%= submit_tag "Edit Painting" %>
+<% end %>

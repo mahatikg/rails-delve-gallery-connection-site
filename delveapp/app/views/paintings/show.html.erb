@@ -6,5 +6,7 @@
 <h3><%= link_to @painting.gallery.museum.name, museum_path(@painting.gallery.museum)%>,
   <%= link_to @painting.gallery.name, gallery_path(@painting.gallery)%></h3>
 
+<h4><%= link_to "Edit this painting", edit_painting_path(@painting) %></h4>
 <br>
+<h4><%= link_to "Add more paintings for #{@painting.artist.name}", new_painting_path %></h4>
 <br>

@@ -1,7 +1,8 @@
 class PaintingsController < ApplicationController
-  before_action :set_painting, only: [:show]
+  before_action :set_painting, only: [:show, :new, :create, :edit, :update, :destroy]
 
   def new
+    @painting = Painting.new
   end
 
   def index
@@ -16,9 +17,14 @@ class PaintingsController < ApplicationController
   end
 
   def create
+    @painting = Painting.create(painting_params)
+    redirect_to painting_path(@painting)
   end
 
   def edit
+    @painting = Painting.find_by(id: params[:id])
+    @painting.update(painting_params)
+    redirect_to painting_path(@painting)
   end
 
   def update
@@ -30,7 +36,12 @@ class PaintingsController < ApplicationController
   private
 
   def set_painting
-    @painting = Painting.find(params[:id])
+    @painting = Painting.find_by(id: params[:id])
+  end
+
+  def painting_params
+    #binding.pry
+    params.require(:paintings).permit(:title, :date, :movement, :artist_id)
   end
 
 end
