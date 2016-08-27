@@ -1,2 +1,6 @@
-<h1>Galleries#index</h1>
-<p>Find me in app/views/galleries/index.html.erb</p>
+<h1>Galleries</h1>
+
+<% @galleries.each do |gallery| %>
+
+<p><%= gallery.name %>, <%= gallery.gallery_category %></p>
+<% end %>

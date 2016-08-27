@@ -1,2 +1,3 @@
-<h1>Museums#show</h1>
-<p>Find me in app/views/museums/show.html.erb</p>
+<h1><%= @museum.name %></h1>
+<h2><%= @museum.city %></h2>
+<h3><%= link_to "Explore galleries at #{@museum.name}", galleries_path %></h3>
