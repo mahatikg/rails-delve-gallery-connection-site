@@ -1,2 +1,10 @@
-<h1>Paintings#show</h1>
-<p>Find me in app/views/paintings/show.html.erb</p>
+<h1><%= "#{@painting.title}" %></h1>
+
+<h2><%= link_to @painting.artist.name, artist_path(@painting.artist)%> |
+  <%= "#{@painting.movement}"%></h2>
+<h4><%= "#{@painting.date}"%></h4>
+<h3><%= link_to @painting.gallery.museum.name, museum_path(@painting.gallery.museum)%>,
+  <%= link_to @painting.gallery.name, gallery_path(@painting.gallery)%></h3>
+
+<br>
+<br>

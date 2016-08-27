@@ -1,5 +1,6 @@
 class PaintingsController < ApplicationController
   before_action :set_painting, only: [:show]
+
   def new
   end
 
@@ -8,7 +9,10 @@ class PaintingsController < ApplicationController
   end
 
   def show
-    @painting = Painting.find(params[:id])
+    @painting = Painting.find_by(id: params[:id])
+    # @artists = Artist.all
+    # @galleries = Gallery.all
+    # @museums = Museum.all
   end
 
   def create

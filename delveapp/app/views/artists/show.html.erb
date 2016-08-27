@@ -1,2 +1,15 @@
-<h1>Artists#show</h1>
-<p>Find me in app/views/artists/show.html.erb</p>
+<h1><%= "#{@artist.name}" %></h1><h2><%= "#{@artist.life_span}"%></h2>
+<% if @artist.contemporary? %>
+<h4>contemporary</h4>
+<% end %>
+<br>
+<br>
+
+<h3>Painted Works</h3>
+<ul>
+  <% @paintings.each do |painting| %>
+    <% if painting.artist_id == @artist.id %>
+        <li><em><%= link_to painting.title, painting_path(painting) %></em></li>
+    <% end %>
+  <% end %>
+</ul>

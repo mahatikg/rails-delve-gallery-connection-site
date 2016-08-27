@@ -1,5 +1,6 @@
 class GalleriesController < ApplicationController
   before_action :set_gallery, only: [:show]
+  
   def index
     @galleries = Gallery.all
   end

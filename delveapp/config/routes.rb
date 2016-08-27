@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   #
   # get 'artists/index'
   #
-  # get 'artists/show'
+  get '/artists/:id', to: 'artists#show', as: 'artist'
   #
   # get 'artists/create'
   #
@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   #
   #get '/paintings', to: 'paintings#index', as: 'paintings'
   #
-  # get 'paintings/show'
+  get '/paintings/:id', to: 'paintings#show', as: 'painting'
   #
   # get 'paintings/create'
   #

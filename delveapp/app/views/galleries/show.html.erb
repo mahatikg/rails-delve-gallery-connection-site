@@ -1,9 +1,8 @@
 <h1><%= "Paintings at #{@gallery.name}" %></h1>
 
 <% @paintings.each do |painting| %>
-
   <% if painting.gallery_id == @gallery.id %>
-
-    <p><%= painting.title %></p>
+    <p><em><%= link_to painting.title, painting_path(painting) %></em>
+      by <%= link_to painting.artist.name, artist_path(painting.artist) %> </p>
   <% end %>
 <% end %>
