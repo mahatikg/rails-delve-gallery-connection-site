@@ -1,10 +1,8 @@
 <h1><%= @museum.name %></h1>
-<h2><%= @museum.city %></h2>
-<h3><em> Explore Galleries at  <%= @museum.name %></em></h3>
-
-
+<h3><%= @museum.city %></h3>
+<h4>Explore Galleries at  <%=@museum.name %></h4>
 <% @galleries.each do |gallery| %>
   <% if gallery.museum_id == @museum.id %>
-      <li><em><%= link_to gallery.name, gallery_path(gallery) %></em></li>
+      <li><%= link_to gallery.name, gallery_path(gallery) %></li>
   <% end %>
 <% end %>
