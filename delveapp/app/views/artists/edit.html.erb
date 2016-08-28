@@ -1,5 +1,10 @@
 <h1>Edit Artist</h1>
-<%= form_tag edit_artist_path do %>
-  <%= render 'form' %>
-  <%= submit_tag "Edit Artist" %>
+<%= form_for(@artist) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :life_span %>
+  <%= f.text_field :life_span %>
+  <%= f.label :contemporary? %>
+  <%= f.check_box :contemporary? %>
+  <%= f.submit %>
 <% end %>

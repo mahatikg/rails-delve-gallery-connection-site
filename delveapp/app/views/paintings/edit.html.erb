@@ -1,5 +1,5 @@
 <h1>Edit Painting</h1>
-<%= form_tag painting_path(@painting) do %>
+<%= form_tag painting_path(@painting), :method=>'patch' do %>
   <%= render 'form' %>
   <%= submit_tag "Edit Painting" %>
 <% end %>
