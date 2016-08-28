@@ -1,0 +1,12 @@
+<h1>Sign up for Delve!</h1>
+
+<%= form_for @user, url: registration_path do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+  <%= f.label :password %>
+  <%= f.password_field :password %><br>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+
+  <%= f.submit "sign up" %>
+<% end %>

@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
+
+  get '/signin', to: 'sessions#new', as: 'signin'
+  delete '/signout', to: 'sessions#destroy', as: 'signout'
+  post '/sessions', to: 'sessions#create'
+
+  get '/signup', to: 'registrations#new'
+  post '/signup', to: 'registrations#create', as: 'registration'
+
+
   get '/welcome', to: 'sessions#welcome', as: 'welcome'
+  get '/', to: 'sessions#welcome', as: 'root_url'
+
   resources :museums, only: [:show, :index]
   resources :galleries, only: [:show, :index]
   resources :artists
