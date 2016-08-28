@@ -5,14 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-birth = Painting.new(title: "Birth of Venus", gallery_id:1, date: "1484-1486" , movement: "Proto - Renaissance")
-birth.save
+birth = Painting.new(title: "Birth of Venus", date: "1484-1486" , movement: "Proto - Renaissance")
+#birth.save
 peppermint = Painting.new(title: "The Peppermint Bottle", date: "1839-1906", movement: "Impressionist")
 #peppermint.save
-campbell = Painting.new(title: "Campbell's Soup Cans", gallery_id:3, date: "1962" , movement: "Pop")
-campbell.save
-bigself = Painting.new(title: "Big Self Portrait", gallery_id:4, date: "1967-1968" , movement: "Contemporary - Realism")
-bigself.save
+campbell = Painting.new(title: "Campbell's Soup Cans", date: "1962" , movement: "Pop")
+#campbell.save
+bigself = Painting.new(title: "Big Self Portrait", date: "1967-1968" , movement: "Contemporary - Realism")
+#bigself.save
 bathers = Painting.new(title: "Bathers", date: "1874-1875" , movement: "Impressionist")
 #bathers.save
 gardanne = Painting.new(title: "Gardanne", date: "1885-1886" , movement: "Impressionist")
@@ -62,7 +62,17 @@ cezanne.paintings << gardanne
 mbg.paintings << gardanne
 gardanne.save
 
+botti.paintings << birth
+bg.paintings << birth
+botti.save
 
+warhol.paintings << campbell
+ag.paintings << campbell
+campbell.save
+
+close.paintings << bigself
+brooklyng.paintings << bigself
+bigself.save
 
 #
 # DATA = {
