@@ -16,7 +16,7 @@ class ArtistsController < ApplicationController
 
   def create
     @artist = Artist.create(artist_params)
-    redirect_to artist_path(@artist)
+    redirect_to new_painting_path
   end
 
   def edit
@@ -29,7 +29,11 @@ class ArtistsController < ApplicationController
     redirect_to artist_path(@artist)
   end
 
-  def delete
+  def destroy
+    @artist = Artist.find_by(id: params[:id])
+    # @gallery = @artist.gallery
+    # @painting.destroy
+    # redirect_to gallery_path(@gallery)
   end
 
 

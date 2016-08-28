@@ -5,6 +5,9 @@
   <%= f.label :life_span %>
   <%= f.text_field :life_span %>
   <%= f.label :contemporary? %>
-  <%= f.check_box :contemporary? %>
+  <%= f.check_box :contemporary? %> <br><br>
+  <%= f.collection_check_boxes :galleries, Gallery.all, :id, :name %>
+  <br>
+  <br>
   <%= f.submit %>
 <% end %>

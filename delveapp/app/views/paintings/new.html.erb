@@ -1,5 +1,20 @@
 <h1>Add Painting</h1>
-<%= form_tag paintings_path do %>
-  <%= render 'form' %>
-  <%= submit_tag "Add Painting" %>
+<%= form_for(@painting) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :date %>
+  <%= f.text_field :date %>
+
+  <%= f.label :movement %>
+  <%= f.text_field :movement %>
+
+  <br><br>
+  <%= f.collection_check_boxes :artist, Artist.all, :id, :name %><br><br>
+
+ <br><br>
+  <%= f.collection_check_boxes :gallery, Gallery.all, :id, :name %>
+  <br>
+  <br>
+  <%= f.submit %>
 <% end %>
