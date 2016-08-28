@@ -11,19 +11,10 @@ class PaintingsController < ApplicationController
 
   def show
     @painting = Painting.find_by(id: params[:id])
-    # @artists = Artist.all
-    # @galleries = Gallery.all
-    # @museums = Museum.all
   end
 
   def create
-    # @painting = Painting.create(painting_params)
-    @painting = Painting.create(title: params[:painting][:title],
-    date: params[:painting][:date],
-    movement: params[:painting][:movement],
-    artist_id: params[:painting][:artist].to_i,
-    gallery_id: params[:painting][:gallery].to_i)
-    # binding.pry
+    @painting = Painting.create(painting_params)
     redirect_to painting_path(@painting)
   end
 
@@ -36,13 +27,7 @@ class PaintingsController < ApplicationController
 
   def update
     @painting = Painting.find_by(id: params[:id])
-    @painting.update(
-    title: params[:painting][:title],
-    date: params[:painting][:date],
-    movement: params[:painting][:movement],
-    artist_id: params[:painting][:artist].to_i,
-    gallery_id: params[:painting][:gallery].to_i
-    )
+    @painting.update(painting_params)
     #we have to use to_i on the gallery and artist because we are pretty sure
     #radio_buttons converts everything to a string and it wasn't updating id numbers
     #that were strings. this makes sense since we got a to_i error with check_boxes prior
@@ -64,9 +49,11 @@ class PaintingsController < ApplicationController
   end
 
    def painting_params
-  #   #binding.pry
-  #   # params.permit(:title, :date, :movement, :artist_id, :new)
-    #  params.require(:painting).permit(:title, :date, :movement, :artists[1], :galleries[1])
+     complicated = {title: params[:painting][:title],
+     date: params[:painting][:date],
+     movement: params[:painting][:movement],
+     artist_id: params[:painting][:artist].to_i,
+     gallery_id: params[:painting][:gallery].to_i}
    end
 
 end

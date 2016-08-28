@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 
   def authorize
     redirect_to welcome_path, notice: 'Please Log In' unless logged_in?
-  
+
   end
 
 end
