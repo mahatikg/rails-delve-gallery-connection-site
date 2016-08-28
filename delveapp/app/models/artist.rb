@@ -6,6 +6,7 @@ class Artist < ApplicationRecord
   accepts_nested_attributes_for :paintings, reject_if: proc { |attributes| attributes['title'].blank? }
 
   validates_uniqueness_of :name
-  validates :name, presence: true 
+  validates :name, presence: true
+
 
 end
