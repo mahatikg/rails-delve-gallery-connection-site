@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-  before_action :set_artist, only: [:show]
+  #before_action :set_artist, only: [:show]
 
   def new
     @artist = Artist.new
@@ -39,8 +39,8 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
   end
 
-  def painting_params
-    params.require(:painting).permit(:title, :date, :movement, :artist_id)
+  def artist_params
+    params.require(:artist).permit(:name, :life_span, :contemporary?)
   end
 
 end

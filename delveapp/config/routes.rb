@@ -1,50 +1,38 @@
 Rails.application.routes.draw do
   get '/welcome', to: 'sessions#welcome', as: 'welcome'
+  resources :museums, only: [:show, :index]
+  resources :galleries, only: [:show, :index]
+  resources :artists
+  resources :paintings
 
-  # get 'sessions/new'
+  # get 'artists/new', to: 'artists#new', as: 'new_artist'
   #
-  # get 'sessions/create'
+  # get '/artists/:id', to: 'artists#show', as: 'artist'
   #
-  # get 'sessions/destroy'
+  # post 'artists/create', to: 'artist#create'
   #
-  get 'artists/new', to: 'artists#new', as: 'new_artist'
+  # get 'artists/:id/edit', to: 'artists#edit', as: 'edit_artist'
+  # post 'artists/:id/edit', to: 'artists#edit'
   #
-  # get 'artists/index'
+  # patch 'artists/update', to: 'artist#update'
   #
-  get '/artists/:id', to: 'artists#show', as: 'artist'
+  # get '/paintings/new', to: 'paintings#new', as: 'new_painting'
+  # post '/paintings', to: 'paintings#create'
   #
-  post 'artists/create', to: 'artist#create'
+  # get '/paintings', to: 'paintings#index'
   #
-  get 'artists/:id/edit', to: 'artists#edit', as: 'edit_artist'
-  post 'artists/:id/edit', to: 'artists#edit'
+  # get '/paintings/:id', to: 'paintings#show', as: 'painting'
   #
-  patch 'artists/update', to: 'artist#update'
+  # get '/paintings/:id/edit', to: 'paintings#edit', as: 'edit_painting'
+  # patch '/paintings/:id', to: 'paintings#update'
   #
-  # get 'artists/delete'
+  # get '/galleries', to: 'galleries#index', as: 'galleries'
   #
-  get '/paintings/new', to: 'paintings#new', as: 'new_painting'
-  post '/paintings', to: 'paintings#create'
+  # get 'galleries/:id', to: 'galleries#show', as: 'gallery'
   #
-  get '/paintings', to: 'paintings#index'
+  # get '/museums', to: 'museums#index', as: 'museums'
   #
-  get '/paintings/:id', to: 'paintings#show', as: 'painting'
-  #
-  # get 'paintings/create'
-  #
-  get '/paintings/:id/edit', to: 'paintings#edit', as: 'edit_painting'
-  patch '/paintings/:id', to: 'paintings#update'
-  #
-  # get 'paintings/update'
-  #
-  # get 'paintings/delete'
-  #
-  get '/galleries', to: 'galleries#index', as: 'galleries'
-  #
-  get 'galleries/:id', to: 'galleries#show', as: 'gallery'
-
-  get '/museums', to: 'museums#index', as: 'museums'
-
-  get '/museums/:id', to: 'museums#show', as: "museum"
+  # get '/museums/:id', to: 'museums#show', as: "museum"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,5 +1,5 @@
 class PaintingsController < ApplicationController
-  before_action :set_painting, only: [:show, :new, :create, :edit, :update, :destroy]
+  #before_action :set_painting, only: [:show, :new, :create, :edit, :update, :destroy]
 
   def new
     @painting = Painting.new
@@ -41,7 +41,8 @@ class PaintingsController < ApplicationController
 
   def painting_params
     #binding.pry
-    params.require(:paintings).permit(:title, :date, :movement, :artist_id)
+    params.permit(:title, :date, :movement, :artist_id)
+    #params.require(:paintings).permit(:title, :date, :movement, :artist_id)
   end
 
 end
