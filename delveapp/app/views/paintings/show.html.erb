@@ -1,6 +1,8 @@
 
     <h2><%= "#{@painting.title}" %></h2>
-    <h3><%= link_to @painting.artist.name, artist_path(@painting.artist)%></h3>
+    <% if @painting.artist %>
+      <h3><%= link_to @painting.artist.name, artist_path(@painting.artist)%></h3>
+    <% end %>
     <h3><%= "#{@painting.movement}"%></h3>
     <h4><%= "#{@painting.date}"%></h4>
 
@@ -8,6 +10,7 @@
 <%= link_to @painting.gallery.name, gallery_path(@painting.gallery)%></p>
 
 <p><%= link_to "Edit this painting", edit_painting_path(@painting) %></p>
-
-<p><%= link_to "Add more paintings for #{@painting.artist.name}", new_painting_path %></p>
+<% if @painting.artist %>
+  <p><%= link_to "Add more paintings for #{@painting.artist.name}", new_painting_path %></p>
+<% end %>
 <p><%= link_to "Delete #{@painting.title}", @painting, method: :delete, data: { confirm: 'Are you sure?' } %></p>

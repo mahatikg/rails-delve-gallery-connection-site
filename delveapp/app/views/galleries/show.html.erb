@@ -2,8 +2,11 @@
 
 <% @paintings.each do |painting| %>
   <% if painting.gallery_id == @gallery.id %>
+
     <p><em><%= link_to painting.title, painting_path(painting) %></em>
+        <% if painting.artist %>
       by <%= link_to painting.artist.name, artist_path(painting.artist) %> </p>
+        <% end %>
   <% end %>
 <% end %>
 

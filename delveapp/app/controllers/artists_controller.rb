@@ -31,11 +31,9 @@ class ArtistsController < ApplicationController
 
   def destroy
     @artist = Artist.find_by(id: params[:id])
-    # @gallery = @artist.gallery
-    # @painting.destroy
-    # redirect_to gallery_path(@gallery)
+    @artist.destroy
+    redirect_to welcome_path
   end
-
 
   private
 
