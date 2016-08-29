@@ -1,4 +1,6 @@
 <%= form_for(@painting) do |f| %>
+  <%= f.file_field :painting_image %>
+
   <%= f.label :title %>
   <%= f.text_field :title %>
 
@@ -7,6 +9,7 @@
 
   <%= f.label :movement %>
   <%= f.text_field :movement %>
+
 
   <br>
     <ul>

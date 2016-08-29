@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160828192411) do
+ActiveRecord::Schema.define(version: 20160829135458) do
 
   create_table "artists", force: :cascade do |t|
     t.string   "name"
@@ -41,8 +41,12 @@ ActiveRecord::Schema.define(version: 20160828192411) do
     t.integer  "gallery_id"
     t.string   "date"
     t.string   "movement"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "painting_image_file_name"
+    t.string   "painting_image_content_type"
+    t.integer  "painting_image_file_size"
+    t.datetime "painting_image_updated_at"
   end
 
   create_table "users", force: :cascade do |t|

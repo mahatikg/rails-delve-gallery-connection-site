@@ -1,5 +1,6 @@
 
     <h2><%= "#{@painting.title}" %></h2>
+    <h2><%= image_tag (@painting.painting_image.url(:medium)) %></h2>
     <% if @painting.artist %>
       <h3><%= link_to @painting.artist_name, artist_path(@painting.artist)%></h3>
     <% end %>

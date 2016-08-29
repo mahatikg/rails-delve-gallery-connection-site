@@ -53,7 +53,9 @@ class PaintingsController < ApplicationController
      date: params[:painting][:date],
      movement: params[:painting][:movement],
      artist_id: params[:painting][:artist].to_i,
-     gallery_id: params[:painting][:gallery].to_i}
+     gallery_id: params[:painting][:gallery].to_i,
+     painting_image: params[:painting][:painting_image]
+    }
    end
 
 end
