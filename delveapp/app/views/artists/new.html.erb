@@ -1,18 +1,2 @@
 <h1>Add Artist</h1>
-<%= form_for(@artist) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :life_span %>
-  <%= f.text_field :life_span %>
-  <%= f.label :contemporary? %>
-  <%= f.check_box :contemporary? %>
-  <br>
-  <ul>
-
-      <%= f.collection_check_boxes :galleries, Gallery.all, :id, :name %>
-  
-  </ul>
-  <br>
-
-  <%= f.submit %>
-<% end %>
+<%= render 'form' %>

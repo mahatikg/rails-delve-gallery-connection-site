@@ -49,13 +49,14 @@ class PaintingsController < ApplicationController
   end
 
    def painting_params
-     complicated = {title: params[:painting][:title],
-     date: params[:painting][:date],
-     movement: params[:painting][:movement],
-     artist_id: params[:painting][:artist].to_i,
-     gallery_id: params[:painting][:gallery].to_i,
-     painting_image: params[:painting][:painting_image]
-    }
+    #  complicated = {title: params[:painting][:title],
+    #  date: params[:painting][:date],
+    #  movement: params[:painting][:movement],
+    #  artist_id: params[:painting][:artist].to_i,
+    #  gallery_id: params[:painting][:gallery].to_i,
+    #  painting_image: params[:painting][:painting_image]
+    # }
+    params.require(:painting).permit(:artist_id, :gallery_id, :title, :date, :movement, :painting_image)
    end
 
 end

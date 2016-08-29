@@ -1,11 +1,13 @@
+  <div1><h2><%= image_tag (@painting.painting_image.url(:medium)) %></h2>
+  </div1>
 
+<div2>
     <h2><%= "#{@painting.title}" %></h2>
-    <h2><%= image_tag (@painting.painting_image.url(:medium)) %></h2>
-    <% if @painting.artist %>
+      <% if @painting.artist %>
       <h3><%= link_to @painting.artist_name, artist_path(@painting.artist)%></h3>
-    <% end %>
-    <h3><%= "#{@painting.movement}"%></h3>
-    <h4><%= "#{@painting.date}"%></h4>
+      <% end %>
+      <h3><%= "#{@painting.movement}"%></h3>
+      <h4><%= "#{@painting.date}"%></h4>
 
 <p><%= link_to @painting.gallery.museum.name, museum_path(@painting.gallery.museum)%>,
 <%= link_to @painting.gallery.name, gallery_path(@painting.gallery)%></p>
@@ -15,3 +17,4 @@
   <p><%= link_to "Add more paintings for #{@painting.artist_name}", new_painting_path %></p>
 <% end %>
 <p><%= link_to "Delete #{@painting.title}", @painting, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+</div2>
