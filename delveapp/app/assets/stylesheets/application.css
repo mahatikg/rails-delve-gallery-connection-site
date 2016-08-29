@@ -10,21 +10,25 @@ body {
   max-width: 300%;
   background: #232323;
 }
+.image_for_painting_show {
+  width: 100%;
+
+}
 div1 {
   height: auto;
   background-size: cover;
   position: relative;
-  border-radius: 20%;
+  border-radius: 0;
   display: inline-block;;
   float: left;
-  max-width: 15%;
+  max-width: 50%;
 
 }
 div2 {
   height: auto;
   background-size: cover;
   position: relative;
-  border-radius: 8%;
+  border-radius: 0;
   display: inline-block;
   float: left;
   max-width: 50%;

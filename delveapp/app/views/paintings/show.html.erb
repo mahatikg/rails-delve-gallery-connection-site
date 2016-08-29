@@ -1,4 +1,7 @@
-  <div1><h2><%= image_tag (@painting.painting_image.url(:medium)) %></h2>
+  <div1>
+
+    <%= image_tag  (@painting.painting_image.url(:medium)), class:"image_for_painting_show" %>
+
   </div1>
 
 <div2>

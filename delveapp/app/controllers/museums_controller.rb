@@ -1,5 +1,5 @@
 class MuseumsController < ApplicationController
-  #before_action :set_museum, only: [:show]
+  before_action :authorize
 
   def index
     @museums = Museum.all

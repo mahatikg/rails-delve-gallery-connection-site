@@ -5,17 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-birth = Painting.new(title: "Birth of Venus", date: "1484-1486" , movement: "Proto - Renaissance")
+birth = Painting.new(title: "Birth of Venus", date: "1484-1486" , movement: "Proto - Renaissance",
+painting_image: File.new("db/painting_images/birth.jpg") )
 #birth.save
-peppermint = Painting.new(title: "The Peppermint Bottle", date: "1839-1906", movement: "Impressionist")
+peppermint = Painting.new(title: "The Peppermint Bottle", date: "1839-1906", movement: "Impressionist",
+painting_image: File.new("db/painting_images/peppermint.jpg"))
 #peppermint.save
-campbell = Painting.new(title: "Campbell's Soup Cans", date: "1962" , movement: "Pop")
+campbell = Painting.new(title: "Campbell's Soup Cans", date: "1962" , movement: "Pop",
+painting_image: File.new("db/painting_images/warhol.jpg"))
 #campbell.save
-bigself = Painting.new(title: "Big Self Portrait", date: "1967-1968" , movement: "Contemporary - Realism")
+bigself = Painting.new(title: "Big Self Portrait", date: "1967-1968" , movement: "Contemporary - Realism",
+painting_image: File.new("db/painting_images/chuckclose.jpg"))
 #bigself.save
-bathers = Painting.new(title: "Bathers", date: "1874-1875" , movement: "Impressionist")
+bathers = Painting.new(title: "Bathers", date: "1874-1875" , movement: "Impressionist",
+painting_image: File.new("db/painting_images/bathers.jpg"))
 #bathers.save
-gardanne = Painting.new(title: "Gardanne", date: "1885-1886" , movement: "Impressionist")
+gardanne = Painting.new(title: "Gardanne", date: "1885-1886" , movement: "Impressionist",
+painting_image: File.new("db/painting_images/Gardanne.jpg"))
 #gardanne.save
 
 botti = Artist.new(name: "Sandro Botticelli", contemporary?: false, life_span: "1445-1510")
